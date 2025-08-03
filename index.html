@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desa Manimbahoi</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (untuk Ikon) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Glide.js Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+
+    <style>
+      /* CSS Tambahan */
+      .dropdown-menu {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .glide__arrow {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        color: #333;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .glide__arrow:hover {
+        background-color: white;
+      }
+      .glide__arrow--left {
+        left: -20px;
+      }
+      .glide__arrow--right {
+        right: -20px;
+      }
+      @media (max-width: 768px) {
+        .glide__arrow--left {
+          left: 10px;
+        }
+        .glide__arrow--right {
+          right: 10px;
+        }
+      }
+    </style>
+
+    <script>
+      // Kustomisasi Tailwind
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              primary: "#22c55e", // Hijau
+              secondary: "#3b82f6", // Biru
+              accent: "#f59e0b", // Kuning
+              dark: "#1f2937", // Abu-abu gelap
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-poppins bg-gray-50 text-gray-800">
+    <nav
+      id="navbar"
+      class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="#" class="flex-shrink-0 flex items-center space-x-2">
+            <img
+              src="https://placehold.co/40x40/22c55e/ffffff?text=DMJ"
+              alt="Logo Desa"
+              class="w-8 h-8"
+            />
+            <span class="font-bold text-lg text-gray-700"
+              >Desa <span class="text-primary">Manimbahoi</span></span
+            >
+          </a>
+          <div
+            class="hidden md:flex items-center space-x-5 text-sm font-medium"
+          >
+            <a
+              href="#beranda"
+              class="text-gray-600 hover:text-primary transition"
+              >Beranda</a
+            >
+            <div class="relative dropdown">
+              <button
+                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
+              >
+                Profil <i class="fas fa-chevron-down fa-xs ml-1"></i>
+              </button>
+              <div
+                class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-10"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Profil Desa</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Sejarah</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Struktur Desa</a
+                >
+              </div>
+            </div>
+            <a
+              href="#wisata"
+              class="text-gray-600 hover:text-primary transition"
+              >Wisata</a
+            >
+            <a
+              href="#berita"
+              class="text-gray-600 hover:text-primary transition"
+              >Berita</a
+            >
+            <a href="#" class="text-gray-600 hover:text-primary transition"
+              >UMKM</a
+            >
+            <div class="relative dropdown">
+              <button
+                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
+              >
+                Informasi <i class="fas fa-chevron-down fa-xs ml-1"></i>
+              </button>
+              <div
+                class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-10"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Infografis Desa</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Ebook</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Anggaran</a
+                >
+              </div>
+            </div>
+            <div class="relative dropdown">
+              <button
+                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
+              >
+                Layanan <i class="fas fa-chevron-down fa-xs ml-1"></i>
+              </button>
+              <div
+                class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-10"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Layanan Surat</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Kritik dan Saran</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-700 focus:outline-none"
+            >
+              <i class="fas fa-bars fa-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden px-4 pt-2 pb-4 space-y-1 border-t border-gray-200"
+      >
+        <a
+          href="#beranda"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >Beranda</a
+        >
+        <div>
+          <button
+            class="mobile-dropdown-toggle w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >
+            <span>Profil</span
+            ><i
+              class="fas fa-chevron-down fa-xs transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="mobile-dropdown-menu hidden pl-6 space-y-1 mt-1">
+            <a
+              href="#profil"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Profil Desa</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Sejarah</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Struktur Desa</a
+            >
+          </div>
+        </div>
+        <a
+          href="#wisata"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >Wisata</a
+        >
+        <a
+          href="#berita"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >Berita</a
+        >
+        <a
+          href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >UMKM</a
+        >
+        <div>
+          <button
+            class="mobile-dropdown-toggle w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >
+            <span>Informasi</span
+            ><i
+              class="fas fa-chevron-down fa-xs transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="mobile-dropdown-menu hidden pl-6 space-y-1 mt-1">
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Infografis Desa</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Ebook</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Anggaran</a
+            >
+          </div>
+        </div>
+        <div>
+          <button
+            class="mobile-dropdown-toggle w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >
+            <span>Layanan</span
+            ><i
+              class="fas fa-chevron-down fa-xs transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="mobile-dropdown-menu hidden pl-6 space-y-1 mt-1">
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Layanan Surat</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Kritik dan Saran</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header
+      id="beranda"
+      class="relative h-[100vh] md:h-[90vh] flex items-center justify-center text-center text-white"
+    >
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('img/decoration/hero.jpg')"
+      ></div>
+      <div class="relative z-10 px-4">
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+          Selamat Datang di Desa <span class="text-primary">Manimbahoi</span>
+        </h1>
+        <p class="text-xl md:text-2xl font-light">
+          Desa Yang Memiliki Banyak Potensi Daerah dan Wisata
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section id="profil" class="py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-dark mb-4 text-primary">
+              Desa Manimbahoi
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Desa Manimbahoi adalah sebuah desa di Wilayah Kecamatan Pargi,
+              Kabupaten Gowa. Desa Manimbahoi secara umum merupakan daerah
+              dataran tinggi dan perbukitan yang berada pada ketinggian 900 m
+              dpl dan berjarak sekitar 65 km dari ibu kota kabupaten dan
+              ditempuh sekitar 2 jam untuk sampai di Desa tersebut.
+            </p>
+          </div>
+          <div class="order-first md:order-last">
+            <img
+              src="img/decoration/hero.jpg"
+              alt="Kantor Desa"
+              class="object-cover shadow-xl w-full h-[400px] md:h-[650px] rounded-sm"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="visi-misi" class="py-16 mb-12 bg-white rounded-lg shadow-lg">
+        <div class="text-center mb-12 px-4">
+          <h2 class="text-3xl font-bold text-dark">Visi & Misi</h2>
+          <p class="text-gray-500 mt-2">
+            Arah dan Tujuan Pembangunan Desa Manimbahoi
+          </p>
+        </div>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 gap-16 px-6">
+          <div>
+            <h3 class="text-2xl font-bold text-dark mb-4 flex items-center">
+              <i class="fas fa-bullseye text-primary mr-3 text-2xl"></i>
+              Visi
+            </h3>
+            <div class="flex flex-col md:flex-row items-start gap-8 mt-4">
+              <p class="md:w-3/5 text-sm text-gray-600">
+                Visi adalah suatu gambaran ideal tentang keadaan masa depan yang
+                diinginkan dengan melihat potensi dan kebutuhan desa. Penyusunan
+                Visi Desa Manimbahoi dilakukan dengan pendekatan partisipatif,
+                melibatkan pihak-pihak yang berkepentingan di desa seperti
+                pemerintah desa, BPD, Kader Pemberdayaan Desa (KPD) tokoh
+                masyarakat, tokoh agama, tokoh perempuan, tokoh pemuda dan
+                masyarakat desa pada umumnya. Berdasarkan hasil musyawarah
+                bersama maka ditetapkan Visi Desa Manimbahoi adalah :
+              </p>
+              <div
+                class="w-full md:w-2/5 bg-green-50 border-l-4 border-primary p-6 rounded-r-lg flex-shrink-0"
+              >
+                <p class="text-gray-700 font-semibold italic text-center">
+                  "TERWUJUDNYA MASYARAKAT MANIMBAHOI YANG BERKUALITAS, MANDIRI
+                  DAN BERDAYA SAING DENGAN TATA KELOLA PEMERINTAH YANG BAIK"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-dark mb-4 flex items-center">
+              <i class="fas fa-list-check text-primary mr-3 text-2xl"></i>
+              Misi
+            </h3>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle text-primary mt-1 mr-2 flex-shrink-0"
+                ></i>
+                <span
+                  >Meningkatkan kualitas sumber daya manusia yang cerdas dan
+                  sehat.</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle text-primary mt-1 mr-2 flex-shrink-0"
+                ></i>
+                <span
+                  >Mengoptimalkan tata kelola pemerintahan desa yang baik,
+                  bersih, dan transparan.</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i
+                  class="fas fa-check-circle text-primary mt-1 mr-2 flex-shrink-0"
+                ></i>
+                <span
+                  >Mengembangkan potensi ekonomi lokal, pertanian, dan UMKM
+                  secara kreatif.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="pimpinan" class="py-16 bg-white rounded-lg shadow-lg">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-dark">Pimpinan Desa</h2>
+          <p class="text-gray-500 mt-2">Perangkat Desa yang Berdedikasi</p>
+        </div>
+        <div class="flex justify-center">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 text-center px-8"
+          >
+            <div>
+              <img
+                src="https://placehold.co/150x150/333/fff?text=Foto"
+                alt="Kepala Desa"
+                class="w-36 h-36 mx-auto rounded-full object-cover border-4 border-primary/20 shadow-md hover:scale-105 transition-transform"
+              />
+              <h4 class="mt-4 text-xl font-bold text-dark">Budi Santoso</h4>
+              <p class="text-primary font-medium">Kepala Desa</p>
+            </div>
+            <div>
+              <img
+                src="https://placehold.co/150x150/555/fff?text=Foto"
+                alt="Sekretaris Desa"
+                class="w-36 h-36 mx-auto rounded-full object-cover border-4 border-primary/20 shadow-md hover:scale-105 transition-transform"
+              />
+              <h4 class="mt-4 text-xl font-bold text-dark">Siti Aminah</h4>
+              <p class="text-primary font-medium">Sekretaris Desa</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="wisata" class="py-16 bg-gray-100 rounded-lg mt-8">
+        <div class="text-center mb-12 px-4">
+          <h2 class="text-3xl font-bold text-dark">Pesona Wisata Desa</h2>
+          <p class="text-gray-500 mt-2">
+            Jelajahi Keindahan Tersembunyi di Desa Kami
+          </p>
+        </div>
+        <div class="glide max-w-6xl mx-auto px-4">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide pb-4">
+                <div
+                  class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col"
+                >
+                  <img
+                    src="https://placehold.co/400x250/007bff/ffffff?text=Wisata+Air+Terjun"
+                    alt="Air Terjun"
+                    class="w-full h-48 object-cover"
+                  />
+                  <div class="p-6 flex-grow">
+                    <h4 class="font-bold text-lg mb-2">Air Terjun Pelangi</h4>
+                    <p class="text-gray-600 text-sm">
+                      Nikmati kesegaran alam di Air Terjun Pelangi yang
+                      memesona.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide pb-4">
+                <div
+                  class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col"
+                >
+                  <img
+                    src="https://placehold.co/400x250/22c55e/ffffff?text=Wisata+Sawah"
+                    alt="Sawah Terasering"
+                    class="w-full h-48 object-cover"
+                  />
+                  <div class="p-6 flex-grow">
+                    <h4 class="font-bold text-lg mb-2">Sawah Terasering</h4>
+                    <p class="text-gray-600 text-sm">
+                      Pemandangan hamparan sawah yang menyejukkan mata.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide pb-4">
+                <div
+                  class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col"
+                >
+                  <img
+                    src="https://placehold.co/400x250/dc3545/ffffff?text=Wisata+Bukit"
+                    alt="Bukit Senja"
+                    class="w-full h-48 object-cover"
+                  />
+                  <div class="p-6 flex-grow">
+                    <h4 class="font-bold text-lg mb-2">Bukit Senja</h4>
+                    <p class="text-gray-600 text-sm">
+                      Tempat terbaik untuk menyaksikan matahari terbenam.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide pb-4">
+                <div
+                  class="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col"
+                >
+                  <img
+                    src="https://placehold.co/400x250/ffc107/000?text=Pasar+Tradisional"
+                    alt="Pasar Desa"
+                    class="w-full h-48 object-cover"
+                  />
+                  <div class="p-6 flex-grow">
+                    <h4 class="font-bold text-lg mb-2">Pasar Tradisional</h4>
+                    <p class="text-gray-600 text-sm">
+                      Cicipi kuliner dan temukan kerajinan tangan khas desa.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="berita" class="py-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-dark">Berita & Informasi</h2>
+          <p class="text-gray-500 mt-2">Kabar Terkini dari Desa Makmur Jaya</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+          >
+            <img
+              src="https://placehold.co/400x250/ffc107/000?text=Gotong+Royong"
+              alt="Gotong Royong"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6 flex-grow">
+              <h4 class="font-bold text-lg mb-2">
+                Kerja Bakti Membersihkan Saluran Irigasi
+              </h4>
+              <p class="text-gray-600 text-sm">
+                Warga Desa Makmur Jaya antusias melaksanakan gotong royong untuk
+                persiapan musim tanam mendatang.
+              </p>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#" class="text-primary hover:underline font-semibold"
+                >Baca Selengkapnya →</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+          >
+            <img
+              src="https://placehold.co/400x250/17a2b8/fff?text=Pelatihan+UMKM"
+              alt="Pelatihan UMKM"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6 flex-grow">
+              <h4 class="font-bold text-lg mb-2">
+                Pelatihan Pemasaran Digital untuk UMKM
+              </h4>
+              <p class="text-gray-600 text-sm">
+                Pemerintah desa mengadakan pelatihan untuk meningkatkan daya
+                saing produk lokal di era digital.
+              </p>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#" class="text-primary hover:underline font-semibold"
+                >Baca Selengkapnya →</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+          >
+            <img
+              src="https://placehold.co/400x250/6c757d/fff?text=Posyandu"
+              alt="Posyandu"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6 flex-grow">
+              <h4 class="font-bold text-lg mb-2">
+                Informasi Jadwal Posyandu Balita
+              </h4>
+              <p class="text-gray-600 text-sm">
+                Jadwal dan lokasi kegiatan Posyandu untuk menjaga kesehatan dan
+                gizi balita di desa.
+              </p>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="#" class="text-primary hover:underline font-semibold"
+                >Baca Selengkapnya →</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-gray-300 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold text-white">Desa Manimbahoi</h5>
+            <p class="text-sm">
+              Berkomitmen untuk menjadi desa yang maju, sejahtera, dan berbudaya
+              melalui partisipasi aktif warga.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold text-white">Menu Navigasi</h5>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="#" class="hover:text-white transition">Beranda</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Profil</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Wisata</a>
+              </li>
+              <li><a href="#" class="hover:text-white transition">UMKM</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition">Layanan</a>
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold text-white">Kontak Kami</h5>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt w-4 mr-2 mt-1"></i
+                ><span>Jl. Raya Sejahtera No. 1, Kab. Sentosa</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone w-4 mr-2"></i><span>(021) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-earth-asia w-4 mr-2"></i
+                ><a href="http://desa.manimbahoi.web.id" class="underline"
+                  >desamalimbahoi.web.id</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold text-white">Lokasi Kantor Desa</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63562.65700903878!2d119.85646186759512!3d-5.314683669096334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbebc3bc1d86983%3A0xd5f0c725c22ebeb8!2sManimbahoi%2C%20Kec.%20Parigi%2C%20Kabupaten%20Gowa%2C%20Sulawesi%20Selatan!5e0!3m2!1sid!2sid!4v1754224818221!5m2!1sid!2sid"
+              width="100%"
+              height="200"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-md"
+            ></iframe>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+          <p>
+            © 2025 Pemerintah Desa Manimbahoi. Didesain dengan
+            <i class="fas fa-heart text-red-500"></i> menggunakan Tailwind CSS.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Glide.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+    <!-- Main Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Desktop Dropdown (CLICK-BASED)
+        if (window.innerWidth > 768) {
+          const dropdowns = document.querySelectorAll(".dropdown");
+          dropdowns.forEach((dropdown) => {
+            const toggle = dropdown.querySelector(".dropdown-toggle");
+            const menu = dropdown.querySelector(".dropdown-menu");
+
+            toggle.addEventListener("click", function (event) {
+              event.stopPropagation();
+              // Close other open dropdowns
+              document
+                .querySelectorAll(".dropdown-menu")
+                .forEach((otherMenu) => {
+                  if (otherMenu !== menu) {
+                    otherMenu.classList.add("hidden");
+                  }
+                });
+              menu.classList.toggle("hidden");
+            });
+          });
+
+          // Close dropdown when clicking anywhere else on the page
+          window.addEventListener("click", function (e) {
+            document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+              if (!menu.classList.contains("hidden")) {
+                menu.classList.add("hidden");
+              }
+            });
+          });
+        }
+
+        // Mobile Accordion
+        const mobileDropdownToggles = document.querySelectorAll(
+          ".mobile-dropdown-toggle"
+        );
+        mobileDropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            const menu = toggle.nextElementSibling;
+            const icon = toggle.querySelector("i");
+            menu.classList.toggle("hidden");
+            icon.classList.toggle("rotate-180");
+          });
+        });
+
+        // Glide.js Carousel Initialization
+        const glide = document.querySelector(".glide");
+        if (glide) {
+          new Glide(glide, {
+            type: "carousel",
+            startAt: 0,
+            perView: 3,
+            gap: 32,
+            breakpoints: {
+              1024: {
+                perView: 2,
+              },
+              768: {
+                perView: 1,
+              },
+            },
+          }).mount();
+        }
+      });
+    </script>
+  </body>
+</html>
