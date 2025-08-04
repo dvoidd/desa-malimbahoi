@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sejarah - Desa Manimbahoi</title>
+    <title>Berita - Desa Manimbahoi</title>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,13 +24,17 @@
 
     <style>
       /* CSS Tambahan */
-      .dropdown-menu {
+      .dropdown-menu,
+      #berita-modal {
         transition: opacity 0.3s ease, transform 0.3s ease;
       }
-      .sketch-image {
-        filter: grayscale(100%) contrast(120%);
-        border: 10px solid white;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      .berita-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .berita-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+          0 8px 10px -6px rgb(0 0 0 / 0.1);
       }
     </style>
 
@@ -83,7 +87,7 @@
             >
             <div class="relative dropdown">
               <button
-                class="dropdown-toggle text-primary font-semibold transition focus:outline-none"
+                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
               >
                 Profil <i class="fas fa-chevron-down fa-xs ml-1"></i>
               </button>
@@ -112,9 +116,7 @@
               class="text-gray-600 hover:text-primary transition"
               >Wisata</a
             >
-            <a
-              href="berita.html"
-              class="text-gray-600 hover:text-primary transition"
+            <a href="berita.html" class="text-primary font-semibold transition"
               >Berita</a
             >
             <a href="#" class="text-gray-600 hover:text-primary transition"
@@ -300,105 +302,170 @@
         style="background-image: url('img/decoration/hero.jpg')"
       ></div>
       <div class="relative z-10 px-4">
-        <h1 class="text-4xl md:text-5xl font-bold">Sejarah Desa Manimbahoi</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">Berita & Informasi Desa</h1>
         <p class="text-lg md:text-xl font-light mt-2">
-          Menelusuri Akar dan Perjalanan Desa
+          Ikuti Perkembangan Terbaru dari Desa Manimbahoi
         </p>
       </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <section id="sejarah-content" class="py-16">
-        <div class="max-w-4xl mx-auto">
-          <h3 class="text-center text-4xl font-bold text-dark mb-3">
-            Sketsa Desa Manimbahoi
-          </h3>
-          <div class="mb-12">
-            <img
-              src="img/decoration/hero.jpg"
-              alt="Sketsa Desa"
-              class="rounded-lg w-full h-auto object-cover sketch-image"
-            />
-          </div>
-          <div class="text-gray-600 space-y-6 text-justify">
-            <div>
-              <p>
-                Dalam sejarah, Manimbahoi dulunya adalah bagian dari wilayah
-                Kerajaan Longka. Namun cerita berubah setelah adanya perjanjian
-                pembagian kekuasaan antara Kerajaan Gowa dan Kerajaan Bone pada
-                Tahun 1565. Perjanjian tersebut dinamakan Perjanjian Caleppa,
-                karena diadakan di Kampung Caleppa Sinjai. Pada akhirnya,
-                perjanjian tersebut dikenal dengan nama Sinjai atau sama banyak.
-              </p>
-              <br />
-              <p>
-                Setelah perjanjian tersebut, tidak ada lagi perang saudara
-                antara Kerajaan Gowa dan Kerajaan Sinjai. Rakyat Bone dapat
-                dengan bebas memasuki wilayah Kerajaan Gowa, begitupun
-                sebaliknya.
-              </p>
-              <br />
-              <p>
-                Dengan adanya kebijakan dari kedua Kerajaan tersebut pula, maka
-                banyak warga Sinjai yang berhijrah ke wilayah Gowa. Dari sekian
-                perkampungan di Sinjai, warga dari kampung Manimpahoi (dekat
-                Manipi) telah banyak memanfaat kesempatan untuk masuk wilayah
-                Gowa.
-              </p>
-              <br />
-              <p>
-                Salah satu tempat tujuan mereka adalah Kerajaan Longka. Kaena
-                merasa senang dengan tempat tersebut, maka warga Manimpahoi
-                memohon kepada Karaeng Longka agar kiranya dapat tinggal dan
-                bercocok tanam di daerah ini.
-              </p>
-              <br />
-              <p>
-                Pada akhirnya, kampung yang diberikan Karaeng Longka kepada
-                warga Manimpahoi yaitu kampung yang diberi nama Sampeang (Tempat
-                Berhenti dan Menetap). Pada perkembangan selanjutnya, wilayah
-                warga Sampeang terus meluas disekitar longka. Begitulah
-                seterusnya, hingga warga Manimbahoi berasimilasi dengan penduduk
-                asli Longka. Mereka pun lebih banyak menggunakan bahasa Makassar
-                dari pada bahasa Bugis. Dari pengaruh penggunaan bahasa
-                tersebut, maka warga setempat lebih memilih menggunakan kata
-                Manimbahoi dari pada Manimpahoi untuk nama kampung tersebut.
-              </p>
-              <br />
-              <p>
-                Dalam pemekaran wilayah Kerajaan, ada empat perkampungan yang
-                masuk dalam wilayah Manimbahoi yaitu kampung Barombong, Kampung
-                Raulo, dan Kampung Sampeang. Para pejabat yang memerintah
-                perkampungan tersebut disebut kepala kampung, sedangkan Raja
-                yang memerintah di Kerajaan Manimbahoi begelar Karaeng
-                Manimbahoi.
-              </p>
-              <br />
-              <p>
-                Pada akhirnya, kampung yang diberikan Karaeng Longka kepada
-                warga Manimpahoi yaitu kampung yang diberi nama Sampeang (Tempat
-                Berhenti dan Menetap). Pada perkembangan selanjutnya, wilayah
-                warga Sampeang terus meluas disekitar longka. Begitulah
-                seterusnya, hingga warga Manimbahoi berasimilasi dengan penduduk
-                asli Longka. Mereka pun lebih banyak menggunakan bahasa Makassar
-                dari pada bahasa Bugis. Dari pengaruh penggunaan bahasa
-                tersebut, maka warga setempat lebih memilih menggunakan kata
-                Manimbahoi dari pada Manimpahoi untuk nama kampung tersebut.
-              </p>
-              <br />
-              <p>
-                Dalam pemekaran wilayah Kerajaan, ada empat perkampungan yang
-                masuk dalam wilayah Manimbahoi yaitu kampung Barombong, Kampung
-                Raulo, dan Kampung Sampeang. Para pejabat yang memerintah
-                perkampungan tersebut disebut kepala kampung, sedangkan Raja
-                yang memerintah di Kerajaan Manimbahoi begelar Karaeng
-                Manimbahoi.
-              </p>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card Berita 1 -->
+        <div
+          class="berita-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Gotong Royong"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span class="flex items-center mr-4"
+                ><i class="fas fa-calendar-alt mr-2"></i>04 Agustus 2025</span
+              >
+              <span class="flex items-center"
+                ><i class="fas fa-user mr-2"></i>Admin Desa</span
+              >
             </div>
+            <h3 class="font-bold text-xl mb-2 text-dark">
+              Kerja Bakti Membersihkan Saluran Irigasi
+            </h3>
+            <p class="text-gray-600 text-sm flex-grow">
+              Warga Desa Manimbahoi antusias melaksanakan gotong royong untuk
+              persiapan musim tanam mendatang, memastikan aliran air lancar
+              untuk persawahan.
+            </p>
+            <button
+              class="mt-4 self-start bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition"
+              onclick="openBeritaModal(this)"
+              data-title="Kerja Bakti Membersihkan Saluran Irigasi"
+              data-img="img/decoration/hero.jpg"
+              data-tanggal="04 Agustus 2025"
+              data-penulis="Admin Desa"
+              data-info="Kegiatan kerja bakti ini merupakan agenda rutin yang diadakan setiap menjelang musim tanam. Seluruh warga dari berbagai dusun turut serta membawa peralatan masing-masing. Kepala Desa, Budi Santoso, dalam sambutannya menyampaikan apresiasi yang tinggi atas partisipasi dan semangat kebersamaan warga. Beliau berharap kegiatan seperti ini dapat terus menjaga kekompakan dan kepedulian terhadap lingkungan desa. Selain membersihkan saluran irigasi, warga juga menanam beberapa pohon di sekitar sumber mata air untuk menjaga kelestarian alam."
+            >
+              Baca Selengkapnya
+            </button>
           </div>
         </div>
-      </section>
+
+        <!-- Card Berita 2 -->
+        <div
+          class="berita-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Pelatihan UMKM"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span class="flex items-center mr-4"
+                ><i class="fas fa-calendar-alt mr-2"></i>02 Agustus 2025</span
+              >
+              <span class="flex items-center"
+                ><i class="fas fa-user mr-2"></i>Tim PKK</span
+              >
+            </div>
+            <h3 class="font-bold text-xl mb-2 text-dark">
+              Pelatihan Pemasaran Digital untuk UMKM
+            </h3>
+            <p class="text-gray-600 text-sm flex-grow">
+              Pemerintah desa mengadakan pelatihan untuk meningkatkan daya saing
+              produk lokal kopi Manimbahoi di era digital.
+            </p>
+            <button
+              class="mt-4 self-start bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition"
+              onclick="openBeritaModal(this)"
+              data-title="Pelatihan Pemasaran Digital untuk UMKM"
+              data-img="img/decoration/hero.jpg"
+              data-tanggal="02 Agustus 2025"
+              data-penulis="Tim PKK"
+              data-info="Bekerjasama dengan dinas koperasi dan UMKM kabupaten, pemerintah desa sukses menyelenggarakan pelatihan pemasaran digital. Acara yang diikuti oleh 30 pelaku UMKM ini membahas strategi penjualan di media sosial dan marketplace. Para peserta diajarkan cara mengambil foto produk yang menarik, membuat konten promosi, dan mengelola toko online. Diharapkan setelah pelatihan ini, produk-produk unggulan Desa Manimbahoi, terutama kopi arabika, dapat menjangkau pasar yang lebih luas dan meningkatkan pendapatan masyarakat."
+            >
+              Baca Selengkapnya
+            </button>
+          </div>
+        </div>
+
+        <!-- Card Berita 3 -->
+        <div
+          class="berita-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Posyandu"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+              <span class="flex items-center mr-4"
+                ><i class="fas fa-calendar-alt mr-2"></i>01 Agustus 2025</span
+              >
+              <span class="flex items-center"
+                ><i class="fas fa-user mr-2"></i>Kader Posyandu</span
+              >
+            </div>
+            <h3 class="font-bold text-xl mb-2 text-dark">
+              Informasi Jadwal Posyandu Balita
+            </h3>
+            <p class="text-gray-600 text-sm flex-grow">
+              Jadwal dan lokasi kegiatan Posyandu untuk menjaga kesehatan dan
+              gizi balita di desa selama bulan Agustus.
+            </p>
+            <button
+              class="mt-4 self-start bg-primary text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-600 transition"
+              onclick="openBeritaModal(this)"
+              data-title="Informasi Jadwal Posyandu Balita"
+              data-img="img/decoration/hero.jpg"
+              data-tanggal="01 Agustus 2025"
+              data-penulis="Kader Posyandu"
+              data-info="Dalam rangka meningkatkan kesehatan ibu dan anak, Posyandu Desa Manimbahoi akan kembali dilaksanakan. Kegiatan meliputi penimbangan berat badan balita, pengukuran tinggi badan, imunisasi, serta pemberian makanan tambahan (PMT). Para ibu diimbau untuk membawa buah hatinya sesuai jadwal yang telah ditentukan di masing-masing dusun. Kegiatan ini bertujuan untuk memantau tumbuh kembang anak secara berkala dan mencegah stunting. Mari bersama-sama kita ciptakan generasi Manimbahoi yang sehat dan cerdas."
+            >
+              Baca Selengkapnya
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <!-- Modal Popup Berita -->
+    <div
+      id="berita-modal"
+      class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+    >
+      <div
+        id="modal-content"
+        class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
+      >
+        <img
+          id="modal-img"
+          src=""
+          alt="Detail Berita"
+          class="w-full md:w-1/2 h-64 md:h-auto object-cover"
+        />
+        <div class="p-8 flex flex-col flex-grow overflow-y-auto">
+          <div class="flex items-center text-sm text-gray-500 mb-4">
+            <span id="modal-tanggal" class="flex items-center mr-4"
+              ><i class="fas fa-calendar-alt mr-2"></i
+            ></span>
+            <span id="modal-penulis" class="flex items-center"
+              ><i class="fas fa-user mr-2"></i
+            ></span>
+          </div>
+          <h2 id="modal-title" class="text-3xl font-bold text-dark mb-4"></h2>
+          <p id="modal-info" class="text-gray-600 text-justify flex-grow"></p>
+          <button
+            id="close-modal-button"
+            class="mt-6 self-start bg-primary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
 
     <footer class="bg-dark text-gray-300 pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -477,33 +544,62 @@
     <!-- Main Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Mobile Menu Overlay
+        // --- SCRIPT UNTUK MODAL BERITA ---
+        const modal = document.getElementById("berita-modal");
+        const closeModalButton = document.getElementById("close-modal-button");
+
+        window.openBeritaModal = function (buttonElement) {
+          const title = buttonElement.dataset.title;
+          const img = buttonElement.dataset.img;
+          const tanggal = buttonElement.dataset.tanggal;
+          const penulis = buttonElement.dataset.penulis;
+          const info = buttonElement.dataset.info;
+
+          document.getElementById("modal-title").textContent = title;
+          document.getElementById("modal-img").src = img;
+          document.getElementById(
+            "modal-tanggal"
+          ).innerHTML = `<i class="fas fa-calendar-alt mr-2"></i>${tanggal}`;
+          document.getElementById(
+            "modal-penulis"
+          ).innerHTML = `<i class="fas fa-user mr-2"></i>${penulis}`;
+          document.getElementById("modal-info").textContent = info;
+
+          modal.classList.remove("hidden");
+          document.body.classList.add("overflow-hidden");
+        };
+
+        function closeModal() {
+          modal.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        }
+
+        closeModalButton.addEventListener("click", closeModal);
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+
+        // --- SCRIPT LAINNYA ---
         const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
-        const closeMenuButton = document.getElementById("close-menu-button");
-        const mobileMenuLinks = mobileMenu.querySelectorAll("a, button");
+        const closeMenuButtonMobile =
+          document.getElementById("close-menu-button");
 
         function openMenu() {
           mobileMenu.classList.remove("hidden");
           document.body.classList.add("overflow-hidden");
         }
 
-        function closeMenu() {
+        function closeMenuMobile() {
           mobileMenu.classList.add("hidden");
           document.body.classList.remove("overflow-hidden");
         }
 
         mobileMenuButton.addEventListener("click", openMenu);
-        closeMenuButton.addEventListener("click", closeMenu);
-        mobileMenuLinks.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            if (link.tagName.toLowerCase() === "a") {
-              closeMenu();
-            }
-          });
-        });
+        closeMenuButtonMobile.addEventListener("click", closeMenuMobile);
 
-        // Desktop Dropdown (CLICK-BASED)
         const dropdowns = document.querySelectorAll(".dropdown");
         dropdowns.forEach((dropdown) => {
           const toggle = dropdown.querySelector(".dropdown-toggle");
@@ -528,7 +624,6 @@
           });
         });
 
-        // Mobile Accordion
         const mobileDropdownToggles = document.querySelectorAll(
           ".mobile-dropdown-toggle"
         );
