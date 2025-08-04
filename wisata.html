@@ -316,6 +316,7 @@
         <div
           class="wisata-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
           onclick="openModal(this)"
+          data-id="lembah-lohe"
           data-title="Lembah Lohe"
           data-img="img/decoration/hero.jpg"
           data-jalan="Jl. Air Terjun No. 1, Dusun Hutan"
@@ -323,7 +324,7 @@
         >
           <img
             src="img/decoration/hero.jpg"
-            alt="Air Terjun Pelangi"
+            alt="Lembah Lohe"
             class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-300"
           />
           <div
@@ -339,6 +340,7 @@
         <div
           class="wisata-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
           onclick="openModal(this)"
+          data-id="danau-tanralili"
           data-title="Danau Tanralili"
           data-img="img/decoration/hero.jpg"
           data-jalan="Jl. Persawahan Indah, Dusun Sawah"
@@ -346,7 +348,7 @@
         >
           <img
             src="img/decoration/hero.jpg"
-            alt="Sawah Terasering"
+            alt="Danau Tanralili"
             class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-300"
           />
           <div
@@ -362,6 +364,7 @@
         <div
           class="wisata-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
           onclick="openModal(this)"
+          data-id="bukit-senja"
           data-title="Bukit Senja Manimbahoi"
           data-img="img/decoration/hero.jpg"
           data-jalan="Jl. Puncak Harapan, Dusun Atas"
@@ -404,12 +407,20 @@
             <i class="fas fa-map-marker-alt mr-2 text-primary"></i><span></span>
           </p>
           <p id="modal-info" class="text-gray-600 text-justify flex-grow"></p>
-          <button
-            id="close-modal-button"
-            class="mt-6 self-start bg-primary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
-          >
-            Tutup
-          </button>
+          <div class="mt-6 flex items-center space-x-4">
+            <a
+              href="#"
+              id="pesan-tiket-button"
+              class="bg-accent text-white font-semibold px-6 py-2 rounded-lg hover:bg-yellow-500 transition"
+              >Pesan Tiket</a
+            >
+            <button
+              id="close-modal-button"
+              class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition"
+            >
+              Tutup
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -497,6 +508,7 @@
 
         window.openModal = function (cardElement) {
           // Ambil data dari atribut data-*
+          const id = cardElement.dataset.id;
           const title = cardElement.dataset.title;
           const img = cardElement.dataset.img;
           const jalan = cardElement.dataset.jalan;
@@ -509,6 +521,9 @@
             .getElementById("modal-jalan")
             .querySelector("span").textContent = jalan;
           document.getElementById("modal-info").textContent = info;
+          document.getElementById(
+            "pesan-tiket-button"
+          ).href = `pemesanan.html?wisata=${id}`;
 
           // Tampilkan modal
           modal.classList.remove("hidden");
