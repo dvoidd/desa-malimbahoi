@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wisata - Desa Manimbahoi</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (untuk Ikon) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* CSS Tambahan */
+      .dropdown-menu {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .wisata-card .overlay {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      .wisata-card:hover .overlay {
+        opacity: 1;
+      }
+      #wisata-modal {
+        transition: opacity 0.3s ease;
+      }
+    </style>
+
+    <script>
+      // Kustomisasi Tailwind
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              primary: "#22c55e", // Hijau
+              secondary: "#3b82f6", // Biru
+              accent: "#f59e0b", // Kuning
+              dark: "#1f2937", // Abu-abu gelap
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-poppins bg-gray-50 text-gray-800">
+    <nav
+      id="navbar"
+      class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-40"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a
+            href="index.html"
+            class="flex-shrink-0 flex items-center space-x-2"
+          >
+            <img
+              src="https://placehold.co/40x40/22c55e/ffffff?text=DMJ"
+              alt="Logo Desa"
+              class="w-8 h-8"
+            />
+            <span class="font-bold text-lg text-gray-700"
+              >Desa <span class="text-primary">Manimbahoi</span></span
+            >
+          </a>
+          <div
+            class="hidden md:flex items-center space-x-5 text-sm font-medium"
+          >
+            <a
+              href="index.html"
+              class="text-gray-600 hover:text-primary transition"
+              >Beranda</a
+            >
+            <div class="relative dropdown">
+              <button
+                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
+              >
+                Profil <i class="fas fa-chevron-down fa-xs ml-1"></i>
+              </button>
+              <div
+                class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-10"
+              >
+                <a
+                  href="profil-desa.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Profil Desa</a
+                >
+                <a
+                  href="sejarah.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Sejarah</a
+                >
+                <a
+                  href="profil-desa.html#struktur"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Struktur Desa</a
+                >
+              </div>
+            </div>
+            <a href="wisata.html" class="text-primary font-semibold transition"
+              >Wisata</a
+            >
+            <a
+              href="index.html#berita"
+              class="text-gray-600 hover:text-primary transition"
+              >Berita</a
+            >
+            <a href="#" class="text-gray-600 hover:text-primary transition"
+              >UMKM</a
+            >
+            <div class="relative dropdown">
+              <button
+                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
+              >
+                Informasi <i class="fas fa-chevron-down fa-xs ml-1"></i>
+              </button>
+              <div
+                class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-10"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Infografis Desa</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Ebook</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Anggaran</a
+                >
+              </div>
+            </div>
+            <div class="relative dropdown">
+              <button
+                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
+              >
+                Layanan <i class="fas fa-chevron-down fa-xs ml-1"></i>
+              </button>
+              <div
+                class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 z-10"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Layanan Surat</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Kritik dan Saran</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-700 focus:outline-none"
+            >
+              <i class="fas fa-bars fa-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed inset-0 bg-white/80 backdrop-blur-md z-50 p-6 space-y-4 overflow-y-auto"
+    >
+      <div class="flex justify-between items-center">
+        <span class="font-bold text-lg text-gray-700">Menu</span>
+        <button id="close-menu-button" class="text-gray-700 focus:outline-none">
+          <i class="fas fa-times fa-lg"></i>
+        </button>
+      </div>
+      <div class="mt-6">
+        <a
+          href="index.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >Beranda</a
+        >
+        <div>
+          <button
+            class="mobile-dropdown-toggle w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >
+            <span>Profil</span
+            ><i
+              class="fas fa-chevron-down fa-xs transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="mobile-dropdown-menu hidden pl-6 space-y-1 mt-1">
+            <a
+              href="profil-desa.html"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Profil Desa</a
+            >
+            <a
+              href="sejarah.html"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Sejarah</a
+            >
+            <a
+              href="profil-desa.html#struktur"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Struktur Desa</a
+            >
+          </div>
+        </div>
+        <a
+          href="wisata.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >Wisata</a
+        >
+        <a
+          href="index.html#berita"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >Berita</a
+        >
+        <a
+          href="#"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >UMKM</a
+        >
+        <div>
+          <button
+            class="mobile-dropdown-toggle w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >
+            <span>Informasi</span
+            ><i
+              class="fas fa-chevron-down fa-xs transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="mobile-dropdown-menu hidden pl-6 space-y-1 mt-1">
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Infografis Desa</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Ebook</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Anggaran</a
+            >
+          </div>
+        </div>
+        <div>
+          <button
+            class="mobile-dropdown-toggle w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+          >
+            <span>Layanan</span
+            ><i
+              class="fas fa-chevron-down fa-xs transition-transform duration-300"
+            ></i>
+          </button>
+          <div class="mobile-dropdown-menu hidden pl-6 space-y-1 mt-1">
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Layanan Surat</a
+            >
+            <a
+              href="#"
+              class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100"
+              >Kritik dan Saran</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header
+      class="relative h-[50vh] flex items-center justify-center text-center text-white"
+    >
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('img/decoration/hero.jpg')"
+      ></div>
+      <div class="relative z-10 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold">Wisata Desa Manimbahoi</h1>
+        <p class="text-lg md:text-xl font-light mt-2">
+          Temukan Keindahan Tersembunyi di Desa Kami
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card Wisata 1 -->
+        <div
+          class="wisata-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+          onclick="openModal(this)"
+          data-title="Lembah Lohe"
+          data-img="img/decoration/hero.jpg"
+          data-jalan="Jl. Air Terjun No. 1, Dusun Hutan"
+          data-info="Air Terjun Pelangi adalah surga tersembunyi dengan ketinggian sekitar 25 meter. Airnya yang jernih dan suasana alam yang asri menjadikannya tempat yang sempurna untuk bersantai dan menyegarkan diri dari hiruk pikuk kota."
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Air Terjun Pelangi"
+            class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-300"
+          />
+          <div
+            class="overlay absolute inset-0 bg-black/60 flex items-center justify-center p-4"
+          >
+            <h3 class="text-white text-2xl font-bold text-center">
+              Lembah Lohe
+            </h3>
+          </div>
+        </div>
+
+        <!-- Card Wisata 2 -->
+        <div
+          class="wisata-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+          onclick="openModal(this)"
+          data-title="Danau Tanralili"
+          data-img="img/decoration/hero.jpg"
+          data-jalan="Jl. Persawahan Indah, Dusun Sawah"
+          data-info="Nikmati pemandangan hamparan sawah terasering yang hijau dan menyejukkan mata. Lokasi ini sangat cocok untuk kegiatan fotografi, berjalan santai, atau sekadar menikmati keindahan alam pedesaan yang damai."
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Sawah Terasering"
+            class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-300"
+          />
+          <div
+            class="overlay absolute inset-0 bg-black/60 flex items-center justify-center p-4"
+          >
+            <h3 class="text-white text-2xl font-bold text-center">
+              Danau Tanralili
+            </h3>
+          </div>
+        </div>
+
+        <!-- Card Wisata 3 -->
+        <div
+          class="wisata-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+          onclick="openModal(this)"
+          data-title="Bukit Senja Manimbahoi"
+          data-img="img/decoration/hero.jpg"
+          data-jalan="Jl. Puncak Harapan, Dusun Atas"
+          data-info="Dari puncak Bukit Senja, Anda dapat menyaksikan pemandangan matahari terbenam yang spektakuler dengan latar belakang perbukitan dan lembah. Tempat ini menjadi favorit para pemuda dan keluarga untuk menghabiskan sore hari."
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Bukit Senja"
+            class="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-300"
+          />
+          <div
+            class="overlay absolute inset-0 bg-black/60 flex items-center justify-center p-4"
+          >
+            <h3 class="text-white text-2xl font-bold text-center">
+              Bukit Senja Manimbahoi
+            </h3>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal Popup Wisata -->
+    <div
+      id="wisata-modal"
+      class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+    >
+      <div
+        id="modal-content"
+        class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
+      >
+        <img
+          id="modal-img"
+          src=""
+          alt="Detail Wisata"
+          class="w-full md:w-1/2 h-64 md:h-auto object-cover"
+        />
+        <div class="p-8 flex flex-col flex-grow overflow-y-auto">
+          <h2 id="modal-title" class="text-3xl font-bold text-dark mb-2"></h2>
+          <p id="modal-jalan" class="text-gray-500 mb-6 flex items-center">
+            <i class="fas fa-map-marker-alt mr-2 text-primary"></i><span></span>
+          </p>
+          <p id="modal-info" class="text-gray-600 text-justify flex-grow"></p>
+          <button
+            id="close-modal-button"
+            class="mt-6 self-start bg-primary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-gray-300 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold text-white">Desa Manimbahoi</h5>
+            <p class="text-sm">
+              Berkomitmen untuk menjadi desa yang maju, sejahtera, dan berbudaya
+              melalui partisipasi aktif warga.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold text-white">Menu Navigasi</h5>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a href="index.html" class="hover:text-white transition"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a href="profil-desa.html" class="hover:text-white transition"
+                  >Profil</a
+                >
+              </li>
+              <li>
+                <a href="#wisata" class="hover:text-white transition">Wisata</a>
+              </li>
+              <li><a href="#" class="hover:text-white transition">UMKM</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition">Layanan</a>
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold text-white">Kontak Kami</h5>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt w-4 mr-2 mt-1"></i
+                ><span>Jl. Raya Sejahtera No. 1, Kab. Sentosa</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone w-4 mr-2"></i><span>(021) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-earth-asia w-4 mr-2"></i
+                ><a href="http://desamanimbahoi.web.id" class="underline"
+                  >desamanimbahoi.web.id</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <h5 class="text-lg font-bold text-white">Lokasi Kantor Desa</h5>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63562.65700903878!2d119.85646186759512!3d-5.314683669096334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbebc3bc1d86983%3A0xd5f0c725c22ebeb8!2sManimbahoi%2C%20Kec.%20Parigi%2C%20Kabupaten%20Gowa%2C%20Sulawesi%20Selatan!5e0!3m2!1sid!2sid!4v1754224818221!5m2!1sid!2sid"
+              width="100%"
+              height="200"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-md"
+            ></iframe>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+          <p>
+            © 2025 Pemerintah Desa Manimbahoi. Didesain dengan
+            <i class="fas fa-heart text-red-500"></i> menggunakan Tailwind CSS.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- SCRIPT UNTUK MODAL WISATA ---
+        const modal = document.getElementById("wisata-modal");
+        const closeModalButton = document.getElementById("close-modal-button");
+
+        window.openModal = function (cardElement) {
+          // Ambil data dari atribut data-*
+          const title = cardElement.dataset.title;
+          const img = cardElement.dataset.img;
+          const jalan = cardElement.dataset.jalan;
+          const info = cardElement.dataset.info;
+
+          // Masukkan data ke dalam modal
+          document.getElementById("modal-title").textContent = title;
+          document.getElementById("modal-img").src = img;
+          document
+            .getElementById("modal-jalan")
+            .querySelector("span").textContent = jalan;
+          document.getElementById("modal-info").textContent = info;
+
+          // Tampilkan modal
+          modal.classList.remove("hidden");
+          document.body.classList.add("overflow-hidden");
+        };
+
+        function closeModal() {
+          modal.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        }
+
+        closeModalButton.addEventListener("click", closeModal);
+        // Tutup modal jika klik di luar kontennya
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+
+        // --- SCRIPT LAINNYA ---
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeMenuButtonMobile =
+          document.getElementById("close-menu-button");
+
+        function openMenu() {
+          mobileMenu.classList.remove("hidden");
+          document.body.classList.add("overflow-hidden");
+        }
+
+        function closeMenuMobile() {
+          mobileMenu.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        }
+
+        mobileMenuButton.addEventListener("click", openMenu);
+        closeMenuButtonMobile.addEventListener("click", closeMenuMobile);
+
+        const dropdowns = document.querySelectorAll(".dropdown");
+        dropdowns.forEach((dropdown) => {
+          const toggle = dropdown.querySelector(".dropdown-toggle");
+          const menu = dropdown.querySelector(".dropdown-menu");
+
+          toggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+            document.querySelectorAll(".dropdown-menu").forEach((otherMenu) => {
+              if (otherMenu !== menu) {
+                otherMenu.classList.add("hidden");
+              }
+            });
+            menu.classList.toggle("hidden");
+          });
+        });
+
+        window.addEventListener("click", function (e) {
+          document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+            if (!menu.classList.contains("hidden")) {
+              menu.classList.add("hidden");
+            }
+          });
+        });
+
+        const mobileDropdownToggles = document.querySelectorAll(
+          ".mobile-dropdown-toggle"
+        );
+        mobileDropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            const menu = toggle.nextElementSibling;
+            const icon = toggle.querySelector("i");
+            menu.classList.toggle("hidden");
+            icon.classList.toggle("rotate-180");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
