@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sejarah - Desa Manimbahoi</title>
+    <title>UMKM - Desa Manimbahoi</title>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,13 +24,24 @@
 
     <style>
       /* CSS Tambahan */
-      .dropdown-menu {
+      .dropdown-menu,
+      #umkm-modal {
         transition: opacity 0.3s ease, transform 0.3s ease;
       }
-      .sketch-image {
-        filter: grayscale(100%) contrast(120%);
-        border: 10px solid white;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      .umkm-card .overlay {
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      }
+      .umkm-card:hover .overlay {
+        opacity: 1;
+      }
+      .umkm-card .info {
+        transform: translateY(100%);
+        transition: transform 0.4s ease-in-out;
+      }
+      .umkm-card:hover .info {
+        transform: translateY(0);
       }
     </style>
 
@@ -83,7 +94,7 @@
             >
             <div class="relative dropdown">
               <button
-                class="dropdown-toggle text-primary font-semibold transition focus:outline-none"
+                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
               >
                 Profil <i class="fas fa-chevron-down fa-xs ml-1"></i>
               </button>
@@ -117,9 +128,7 @@
               class="text-gray-600 hover:text-primary transition"
               >Berita</a
             >
-            <a
-              href="umkm.html"
-              class="text-gray-600 hover:text-primary transition"
+            <a href="umkm.html" class="text-primary font-semibold transition"
               >UMKM</a
             >
             <div class="relative dropdown">
@@ -302,105 +311,104 @@
         style="background-image: url('img/decoration/hero.jpg')"
       ></div>
       <div class="relative z-10 px-4">
-        <h1 class="text-4xl md:text-5xl font-bold">Sejarah Desa Manimbahoi</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">UMKM Desa Manimbahoi</h1>
         <p class="text-lg md:text-xl font-light mt-2">
-          Menelusuri Akar dan Perjalanan Desa
+          Dukung Ekonomi Lokal dengan Produk Unggulan Desa
         </p>
       </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <section id="sejarah-content" class="py-16">
-        <div class="max-w-4xl mx-auto">
-          <h3 class="text-center text-4xl font-bold text-dark mb-3">
-            Sketsa Desa Manimbahoi
-          </h3>
-          <div class="mb-12">
-            <img
-              src="img/decoration/hero.jpg"
-              alt="Sketsa Desa"
-              class="rounded-lg w-full h-auto object-cover sketch-image"
-            />
-          </div>
-          <div class="text-gray-600 space-y-6 text-justify">
-            <div>
-              <p>
-                Dalam sejarah, Manimbahoi dulunya adalah bagian dari wilayah
-                Kerajaan Longka. Namun cerita berubah setelah adanya perjanjian
-                pembagian kekuasaan antara Kerajaan Gowa dan Kerajaan Bone pada
-                Tahun 1565. Perjanjian tersebut dinamakan Perjanjian Caleppa,
-                karena diadakan di Kampung Caleppa Sinjai. Pada akhirnya,
-                perjanjian tersebut dikenal dengan nama Sinjai atau sama banyak.
-              </p>
-              <br />
-              <p>
-                Setelah perjanjian tersebut, tidak ada lagi perang saudara
-                antara Kerajaan Gowa dan Kerajaan Sinjai. Rakyat Bone dapat
-                dengan bebas memasuki wilayah Kerajaan Gowa, begitupun
-                sebaliknya.
-              </p>
-              <br />
-              <p>
-                Dengan adanya kebijakan dari kedua Kerajaan tersebut pula, maka
-                banyak warga Sinjai yang berhijrah ke wilayah Gowa. Dari sekian
-                perkampungan di Sinjai, warga dari kampung Manimpahoi (dekat
-                Manipi) telah banyak memanfaat kesempatan untuk masuk wilayah
-                Gowa.
-              </p>
-              <br />
-              <p>
-                Salah satu tempat tujuan mereka adalah Kerajaan Longka. Kaena
-                merasa senang dengan tempat tersebut, maka warga Manimpahoi
-                memohon kepada Karaeng Longka agar kiranya dapat tinggal dan
-                bercocok tanam di daerah ini.
-              </p>
-              <br />
-              <p>
-                Pada akhirnya, kampung yang diberikan Karaeng Longka kepada
-                warga Manimpahoi yaitu kampung yang diberi nama Sampeang (Tempat
-                Berhenti dan Menetap). Pada perkembangan selanjutnya, wilayah
-                warga Sampeang terus meluas disekitar longka. Begitulah
-                seterusnya, hingga warga Manimbahoi berasimilasi dengan penduduk
-                asli Longka. Mereka pun lebih banyak menggunakan bahasa Makassar
-                dari pada bahasa Bugis. Dari pengaruh penggunaan bahasa
-                tersebut, maka warga setempat lebih memilih menggunakan kata
-                Manimbahoi dari pada Manimpahoi untuk nama kampung tersebut.
-              </p>
-              <br />
-              <p>
-                Dalam pemekaran wilayah Kerajaan, ada empat perkampungan yang
-                masuk dalam wilayah Manimbahoi yaitu kampung Barombong, Kampung
-                Raulo, dan Kampung Sampeang. Para pejabat yang memerintah
-                perkampungan tersebut disebut kepala kampung, sedangkan Raja
-                yang memerintah di Kerajaan Manimbahoi begelar Karaeng
-                Manimbahoi.
-              </p>
-              <br />
-              <p>
-                Pada akhirnya, kampung yang diberikan Karaeng Longka kepada
-                warga Manimpahoi yaitu kampung yang diberi nama Sampeang (Tempat
-                Berhenti dan Menetap). Pada perkembangan selanjutnya, wilayah
-                warga Sampeang terus meluas disekitar longka. Begitulah
-                seterusnya, hingga warga Manimbahoi berasimilasi dengan penduduk
-                asli Longka. Mereka pun lebih banyak menggunakan bahasa Makassar
-                dari pada bahasa Bugis. Dari pengaruh penggunaan bahasa
-                tersebut, maka warga setempat lebih memilih menggunakan kata
-                Manimbahoi dari pada Manimpahoi untuk nama kampung tersebut.
-              </p>
-              <br />
-              <p>
-                Dalam pemekaran wilayah Kerajaan, ada empat perkampungan yang
-                masuk dalam wilayah Manimbahoi yaitu kampung Barombong, Kampung
-                Raulo, dan Kampung Sampeang. Para pejabat yang memerintah
-                perkampungan tersebut disebut kepala kampung, sedangkan Raja
-                yang memerintah di Kerajaan Manimbahoi begelar Karaeng
-                Manimbahoi.
-              </p>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card UMKM 1 -->
+        <div
+          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+          onclick="openUmkmModal(this)"
+          data-title="Kopi Robusta Manimbahoi"
+          data-img="img/decoration/hero.jpg"
+          data-info="Kopi Robusta Manimbahoi ditanam di ketinggian 900 MDPL, menghasilkan biji kopi dengan cita rasa kuat, pahit yang khas, dan aroma cokelat yang nikmat. Diproses secara tradisional oleh para petani lokal untuk menjaga kualitas terbaik dari setiap bijinya."
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Kopi Robusta"
+            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+          />
+          <div class="overlay absolute inset-0 flex items-end">
+            <div class="info p-6 text-white w-full">
+              <h3 class="text-2xl font-bold">Kopi Robusta Manimbahoi</h3>
             </div>
           </div>
         </div>
-      </section>
+
+        <!-- Card UMKM 2 -->
+        <div
+          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+          onclick="openUmkmModal(this)"
+          data-title="Madu Hutan Asli"
+          data-img="img/decoration/hero.jpg"
+          data-info="Diambil langsung dari hutan di sekitar Desa Manimbahoi, madu ini memiliki kualitas premium dengan rasa manis alami dan khasiat yang menyehatkan. Dipanen secara berkelanjutan untuk menjaga kelestarian lebah dan ekosistem hutan."
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Madu Hutan"
+            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+          />
+          <div class="overlay absolute inset-0 flex items-end">
+            <div class="info p-6 text-white w-full">
+              <h3 class="text-2xl font-bold">Madu Hutan Asli</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card UMKM 3 -->
+        <div
+          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
+          onclick="openUmkmModal(this)"
+          data-title="Keripik Sayur Organik"
+          data-img="img/decoration/hero.jpg"
+          data-info="Camilan sehat yang terbuat dari sayuran organik segar hasil panen petani desa. Diolah tanpa bahan pengawet dan MSG, keripik ini renyah, gurih, dan kaya akan nutrisi. Tersedia dalam varian bayam, wortel, dan ubi."
+        >
+          <img
+            src="img/decoration/hero.jpg"
+            alt="Keripik Sayur"
+            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+          />
+          <div class="overlay absolute inset-0 flex items-end">
+            <div class="info p-6 text-white w-full">
+              <h3 class="text-2xl font-bold">Keripik Sayur Organik</h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <!-- Modal Popup UMKM -->
+    <div
+      id="umkm-modal"
+      class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+    >
+      <div
+        id="modal-content"
+        class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
+      >
+        <img
+          id="modal-img"
+          src=""
+          alt="Detail UMKM"
+          class="w-full md:w-1/2 h-64 md:h-auto object-cover"
+        />
+        <div class="p-8 flex flex-col flex-grow overflow-y-auto">
+          <h2 id="modal-title" class="text-3xl font-bold text-dark mb-4"></h2>
+          <p id="modal-info" class="text-gray-600 text-justify flex-grow"></p>
+          <button
+            id="close-modal-button"
+            class="mt-6 self-start bg-primary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
 
     <footer class="bg-dark text-gray-300 pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -479,33 +487,54 @@
     <!-- Main Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Mobile Menu Overlay
+        // --- SCRIPT UNTUK MODAL UMKM ---
+        const modal = document.getElementById("umkm-modal");
+        const closeModalButton = document.getElementById("close-modal-button");
+
+        window.openUmkmModal = function (cardElement) {
+          const title = cardElement.dataset.title;
+          const img = cardElement.dataset.img;
+          const info = cardElement.dataset.info;
+
+          document.getElementById("modal-title").textContent = title;
+          document.getElementById("modal-img").src = img;
+          document.getElementById("modal-info").textContent = info;
+
+          modal.classList.remove("hidden");
+          document.body.classList.add("overflow-hidden");
+        };
+
+        function closeModal() {
+          modal.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        }
+
+        closeModalButton.addEventListener("click", closeModal);
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+
+        // --- SCRIPT LAINNYA ---
         const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
-        const closeMenuButton = document.getElementById("close-menu-button");
-        const mobileMenuLinks = mobileMenu.querySelectorAll("a, button");
+        const closeMenuButtonMobile =
+          document.getElementById("close-menu-button");
 
         function openMenu() {
           mobileMenu.classList.remove("hidden");
           document.body.classList.add("overflow-hidden");
         }
 
-        function closeMenu() {
+        function closeMenuMobile() {
           mobileMenu.classList.add("hidden");
           document.body.classList.remove("overflow-hidden");
         }
 
         mobileMenuButton.addEventListener("click", openMenu);
-        closeMenuButton.addEventListener("click", closeMenu);
-        mobileMenuLinks.forEach((link) => {
-          link.addEventListener("click", (e) => {
-            if (link.tagName.toLowerCase() === "a") {
-              closeMenu();
-            }
-          });
-        });
+        closeMenuButtonMobile.addEventListener("click", closeMenuMobile);
 
-        // Desktop Dropdown (CLICK-BASED)
         const dropdowns = document.querySelectorAll(".dropdown");
         dropdowns.forEach((dropdown) => {
           const toggle = dropdown.querySelector(".dropdown-toggle");
@@ -530,7 +559,6 @@
           });
         });
 
-        // Mobile Accordion
         const mobileDropdownToggles = document.querySelectorAll(
           ".mobile-dropdown-toggle"
         );
