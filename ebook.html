@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UMKM - Desa Manimbahoi</title>
+    <title>Ebook - Desa Manimbahoi</title>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,22 +25,22 @@
     <style>
       /* CSS Tambahan */
       .dropdown-menu,
-      #umkm-modal {
+      #ebook-modal {
         transition: opacity 0.3s ease, transform 0.3s ease;
       }
-      .umkm-card .overlay {
+      .ebook-card .overlay {
         opacity: 0;
         transition: opacity 0.4s ease-in-out;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
       }
-      .umkm-card:hover .overlay {
+      .ebook-card:hover .overlay {
         opacity: 1;
       }
-      .umkm-card .info {
+      .ebook-card .info {
         transform: translateY(100%);
         transition: transform 0.4s ease-in-out;
       }
-      .umkm-card:hover .info {
+      .ebook-card:hover .info {
         transform: translateY(0);
       }
     </style>
@@ -128,12 +128,14 @@
               class="text-gray-600 hover:text-primary transition"
               >Berita</a
             >
-            <a href="umkm.html" class="text-primary font-semibold transition"
+            <a
+              href="umkm.html"
+              class="text-gray-600 hover:text-primary transition"
               >UMKM</a
             >
             <div class="relative dropdown">
               <button
-                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
+                class="dropdown-toggle text-primary font-semibold transition focus:outline-none"
               >
                 Informasi <i class="fas fa-chevron-down fa-xs ml-1"></i>
               </button>
@@ -147,7 +149,7 @@
                 >
                 <a
                   href="ebook.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  class="block px-4 py-2 text-sm text-primary font-semibold hover:bg-gray-100"
                   >Ebook</a
                 >
                 <a
@@ -311,101 +313,96 @@
         style="background-image: url('img/decoration/hero.jpg')"
       ></div>
       <div class="relative z-10 px-4">
-        <h1 class="text-4xl md:text-5xl font-bold">UMKM Desa Manimbahoi</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">Pustaka Digital Desa</h1>
         <p class="text-lg md:text-xl font-light mt-2">
-          Dukung Ekonomi Lokal dengan Produk Unggulan Desa
+          Baca dan Unduh Dokumen Penting Desa Manimbahoi
         </p>
       </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card UMKM 1 -->
+        <!-- Card Ebook 1 -->
         <div
-          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
-          onclick="openUmkmModal(this)"
-          data-title="Kopi Robusta Manimbahoi"
-          data-img="img/decoration/hero.jpg"
-          data-info="Kopi Robusta Manimbahoi ditanam di ketinggian 900 MDPL, menghasilkan biji kopi dengan cita rasa kuat, pahit yang khas, dan aroma cokelat yang nikmat. Diproses secara tradisional oleh para petani lokal untuk menjaga kualitas terbaik dari setiap bijinya."
+          class="ebook-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[28rem]"
+          onclick="openEbookModal(this)"
+          data-pdf="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
         >
           <img
-            src="img/decoration/hero.jpg"
-            alt="Kopi Robusta"
-            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+            src="https://placehold.co/400x600/4f46e5/ffffff?text=RPJMDes+2024-2029"
+            alt="RPJMDes"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
           />
           <div class="overlay absolute inset-0 flex items-end">
             <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">Kopi Robusta Manimbahoi</h3>
+              <h3 class="text-2xl font-bold">RPJMDes 2024-2029</h3>
             </div>
           </div>
         </div>
 
-        <!-- Card UMKM 2 -->
+        <!-- Card Ebook 2 -->
         <div
-          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
-          onclick="openUmkmModal(this)"
-          data-title="Madu Hutan Asli"
-          data-img="img/decoration/hero.jpg"
-          data-info="Diambil langsung dari hutan di sekitar Desa Manimbahoi, madu ini memiliki kualitas premium dengan rasa manis alami dan khasiat yang menyehatkan. Dipanen secara berkelanjutan untuk menjaga kelestarian lebah dan ekosistem hutan."
+          class="ebook-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[28rem]"
+          onclick="openEbookModal(this)"
+          data-pdf="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
         >
           <img
-            src="img/decoration/hero.jpg"
-            alt="Madu Hutan"
-            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+            src="https://placehold.co/400x600/db2777/ffffff?text=Profil+Desa+2025"
+            alt="Profil Desa"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
           />
           <div class="overlay absolute inset-0 flex items-end">
             <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">Madu Hutan Asli</h3>
+              <h3 class="text-2xl font-bold">Buku Profil Desa 2025</h3>
             </div>
           </div>
         </div>
 
-        <!-- Card UMKM 3 -->
+        <!-- Card Ebook 3 -->
         <div
-          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
-          onclick="openUmkmModal(this)"
-          data-title="Keripik Sayur Organik"
-          data-img="img/decoration/hero.jpg"
-          data-info="Camilan sehat yang terbuat dari sayuran organik segar hasil panen petani desa. Diolah tanpa bahan pengawet dan MSG, keripik ini renyah, gurih, dan kaya akan nutrisi. Tersedia dalam varian bayam, wortel, dan ubi."
+          class="ebook-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[28rem]"
+          onclick="openEbookModal(this)"
+          data-pdf="img/decoration/pdf.pdf"
         >
           <img
-            src="img/decoration/hero.jpg"
-            alt="Keripik Sayur"
-            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+            src="img/decoration/infografis.jpg"
+            alt="Laporan Keuangan"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
           />
           <div class="overlay absolute inset-0 flex items-end">
             <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">Keripik Sayur Organik</h3>
+              <h3 class="text-2xl font-bold">Laporan Keuangan Desa</h3>
             </div>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- Modal Popup UMKM -->
+    <!-- Modal Popup Ebook -->
     <div
-      id="umkm-modal"
-      class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+      id="ebook-modal"
+      class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
     >
       <div
-        id="modal-content"
-        class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
+        class="bg-white rounded-lg shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col overflow-hidden"
       >
-        <img
-          id="modal-img"
-          src=""
-          alt="Detail UMKM"
-          class="w-full md:w-1/2 h-64 md:h-auto object-cover"
-        />
-        <div class="p-8 flex flex-col flex-grow overflow-y-auto">
-          <h2 id="modal-title" class="text-3xl font-bold text-dark mb-4"></h2>
-          <p id="modal-info" class="text-gray-600 text-justify flex-grow"></p>
+        <div class="p-4 flex justify-between items-center border-b">
+          <h3 id="modal-title" class="text-xl font-bold text-dark"></h3>
           <button
             id="close-modal-button"
-            class="mt-6 self-start bg-primary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
+            class="text-gray-500 hover:text-dark transition"
           >
-            Tutup
+            &times;
           </button>
+        </div>
+        <div class="flex-grow">
+          <iframe
+            id="modal-pdf-viewer"
+            src=""
+            width="100%"
+            height="100%"
+            frameborder="0"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -487,19 +484,18 @@
     <!-- Main Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // --- SCRIPT UNTUK MODAL UMKM ---
-        const modal = document.getElementById("umkm-modal");
+        // --- SCRIPT UNTUK MODAL EBOOK ---
+        const modal = document.getElementById("ebook-modal");
         const closeModalButton = document.getElementById("close-modal-button");
+        const modalPdfViewer = document.getElementById("modal-pdf-viewer");
+        const modalTitle = document.getElementById("modal-title");
 
-        window.openUmkmModal = function (cardElement) {
-          const title = cardElement.dataset.title;
-          const img = cardElement.dataset.img;
-          const info = cardElement.dataset.info;
+        window.openEbookModal = function (cardElement) {
+          const pdfSrc = cardElement.dataset.pdf;
+          const title = cardElement.querySelector("h3").textContent;
 
-          document.getElementById("modal-title").textContent = title;
-          document.getElementById("modal-img").src = img;
-          document.getElementById("modal-info").textContent = info;
-
+          modalTitle.textContent = title;
+          modalPdfViewer.src = pdfSrc;
           modal.classList.remove("hidden");
           document.body.classList.add("overflow-hidden");
         };
@@ -507,6 +503,7 @@
         function closeModal() {
           modal.classList.add("hidden");
           document.body.classList.remove("overflow-hidden");
+          modalPdfViewer.src = ""; // Kosongkan src untuk menghentikan loading PDF
         }
 
         closeModalButton.addEventListener("click", closeModal);
