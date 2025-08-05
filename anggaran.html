@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ebook - Desa Manimbahoi</title>
+    <title>Anggaran - Desa Manimbahoi</title>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,24 +24,8 @@
 
     <style>
       /* CSS Tambahan */
-      .dropdown-menu,
-      #ebook-modal {
+      .dropdown-menu {
         transition: opacity 0.3s ease, transform 0.3s ease;
-      }
-      .ebook-card .overlay {
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-      }
-      .ebook-card:hover .overlay {
-        opacity: 1;
-      }
-      .ebook-card .info {
-        transform: translateY(100%);
-        transition: transform 0.4s ease-in-out;
-      }
-      .ebook-card:hover .info {
-        transform: translateY(0);
       }
     </style>
 
@@ -149,12 +133,12 @@
                 >
                 <a
                   href="ebook.html"
-                  class="block px-4 py-2 text-sm text-primary font-semibold hover:bg-gray-100"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >Ebook</a
                 >
                 <a
                   href="anggaran.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  class="block px-4 py-2 text-sm text-primary font-semibold hover:bg-gray-100"
                   >Anggaran</a
                 >
               </div>
@@ -313,99 +297,31 @@
         style="background-image: url('img/decoration/hero.jpg')"
       ></div>
       <div class="relative z-10 px-4">
-        <h1 class="text-4xl md:text-5xl font-bold">Pustaka Digital Desa</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">Anggaran Desa Manimbahoi</h1>
         <p class="text-lg md:text-xl font-light mt-2">
-          Baca dan Unduh Dokumen Penting Desa Manimbahoi
+          Wujud Transparansi Pengelolaan Dana Desa
         </p>
       </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card Ebook 1 -->
-        <div
-          class="ebook-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[28rem]"
-          onclick="openEbookModal(this)"
-          data-pdf="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-        >
-          <img
-            src="https://placehold.co/400x600/4f46e5/ffffff?text=RPJMDes+2024-2029"
-            alt="RPJMDes"
-            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-          />
-          <div class="overlay absolute inset-0 flex items-end">
-            <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">RPJMDes 2024-2029</h3>
-            </div>
-          </div>
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-dark">Infografis APBDes 2025</h2>
+          <p class="text-gray-500 mt-2">
+            Berikut adalah rincian Anggaran Pendapatan dan Belanja Desa
+            Manimbahoi untuk tahun 2025.
+          </p>
         </div>
-
-        <!-- Card Ebook 2 -->
-        <div
-          class="ebook-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[28rem]"
-          onclick="openEbookModal(this)"
-          data-pdf="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-        >
+        <div class="flex justify-center">
           <img
-            src="https://placehold.co/400x600/db2777/ffffff?text=Profil+Desa+2025"
-            alt="Profil Desa"
-            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+            src="img/decoration/anggaran.jpg"
+            alt="Infografis Anggaran Desa"
+            class="w-full max-w-4xl h-auto rounded-md shadow-md border"
           />
-          <div class="overlay absolute inset-0 flex items-end">
-            <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">Buku Profil Desa 2025</h3>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card Ebook 3 -->
-        <div
-          class="ebook-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[28rem]"
-          onclick="openEbookModal(this)"
-          data-pdf="img/decoration/pdf.pdf"
-        >
-          <img
-            src="img/decoration/infografis.jpg"
-            alt="Laporan Keuangan"
-            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-          />
-          <div class="overlay absolute inset-0 flex items-end">
-            <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">Laporan Keuangan Desa</h3>
-            </div>
-          </div>
         </div>
       </div>
     </main>
-
-    <!-- Modal Popup Ebook -->
-    <div
-      id="ebook-modal"
-      class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-    >
-      <div
-        class="bg-white rounded-lg shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col overflow-hidden"
-      >
-        <div class="p-4 flex justify-between items-center border-b">
-          <h3 id="modal-title" class="text-xl font-bold text-dark"></h3>
-          <button
-            id="close-modal-button"
-            class="text-gray-500 hover:text-dark transition"
-          >
-            &times;
-          </button>
-        </div>
-        <div class="flex-grow">
-          <iframe
-            id="modal-pdf-viewer"
-            src=""
-            width="100%"
-            height="100%"
-            frameborder="0"
-          ></iframe>
-        </div>
-      </div>
-    </div>
 
     <footer class="bg-dark text-gray-300 pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -431,9 +347,13 @@
                 >
               </li>
               <li>
-                <a href="#wisata" class="hover:text-white transition">Wisata</a>
+                <a href="wisata.html" class="hover:text-white transition"
+                  >Wisata</a
+                >
               </li>
-              <li><a href="#" class="hover:text-white transition">UMKM</a></li>
+              <li>
+                <a href="umkm.html" class="hover:text-white transition">UMKM</a>
+              </li>
               <li>
                 <a href="#" class="hover:text-white transition">Layanan</a>
               </li>
@@ -450,20 +370,17 @@
                 <i class="fas fa-phone w-4 mr-2"></i><span>(021) 123-4567</span>
               </li>
               <li class="flex items-center">
-                <i class="fas fa-earth-asia w-4 mr-2"></i
-                ><a href="http://desamanimbahoi.web.id" class="underline"
-                  >desamanimbahoi.web.id</a
-                >
+                <i class="fas fa-envelope w-4 mr-2"></i
+                ><span>kontak@makmurjaya.desa.id</span>
               </li>
             </ul>
           </div>
           <div class="space-y-4">
             <h5 class="text-lg font-bold text-white">Lokasi Kantor Desa</h5>
-
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63562.65700903878!2d119.85646186759512!3d-5.314683669096334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbebc3bc1d86983%3A0xd5f0c725c22ebeb8!2sManimbahoi%2C%20Kec.%20Parigi%2C%20Kabupaten%20Gowa%2C%20Sulawesi%20Selatan!5e0!3m2!1sid!2sid!4v1754224818221!5m2!1sid!2sid"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.666421676674!2d106.82496417500001!3d-6.175392393809623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1722669466547!5m2!1sid!2sid"
               width="100%"
-              height="200"
+              height="150"
               style="border: 0"
               allowfullscreen=""
               loading="lazy"
@@ -484,35 +401,6 @@
     <!-- Main Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // --- SCRIPT UNTUK MODAL EBOOK ---
-        const modal = document.getElementById("ebook-modal");
-        const closeModalButton = document.getElementById("close-modal-button");
-        const modalPdfViewer = document.getElementById("modal-pdf-viewer");
-        const modalTitle = document.getElementById("modal-title");
-
-        window.openEbookModal = function (cardElement) {
-          const pdfSrc = cardElement.dataset.pdf;
-          const title = cardElement.querySelector("h3").textContent;
-
-          modalTitle.textContent = title;
-          modalPdfViewer.src = pdfSrc;
-          modal.classList.remove("hidden");
-          document.body.classList.add("overflow-hidden");
-        };
-
-        function closeModal() {
-          modal.classList.add("hidden");
-          document.body.classList.remove("overflow-hidden");
-          modalPdfViewer.src = ""; // Kosongkan src untuk menghentikan loading PDF
-        }
-
-        closeModalButton.addEventListener("click", closeModal);
-        modal.addEventListener("click", function (event) {
-          if (event.target === modal) {
-            closeModal();
-          }
-        });
-
         // --- SCRIPT LAINNYA ---
         const mobileMenuButton = document.getElementById("mobile-menu-button");
         const mobileMenu = document.getElementById("mobile-menu");
