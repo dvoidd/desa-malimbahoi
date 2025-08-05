@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UMKM - Desa Manimbahoi</title>
+    <title>Infografis - Desa Manimbahoi</title>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,23 +25,32 @@
     <style>
       /* CSS Tambahan */
       .dropdown-menu,
-      #umkm-modal {
+      #infografis-modal {
         transition: opacity 0.3s ease, transform 0.3s ease;
       }
-      .umkm-card .overlay {
+      .infografis-card .overlay {
         opacity: 0;
         transition: opacity 0.4s ease-in-out;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
       }
-      .umkm-card:hover .overlay {
+      .infografis-card:hover .overlay {
         opacity: 1;
       }
-      .umkm-card .info {
+      .infografis-card .info {
         transform: translateY(100%);
         transition: transform 0.4s ease-in-out;
       }
-      .umkm-card:hover .info {
+      .infografis-card:hover .info {
         transform: translateY(0);
+      }
+      /* CSS untuk Zoom Modal */
+      #modal-img {
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+      }
+      #modal-img.is-zoomed {
+        transform: scale(1.5);
+        cursor: zoom-out;
       }
     </style>
 
@@ -128,12 +137,14 @@
               class="text-gray-600 hover:text-primary transition"
               >Berita</a
             >
-            <a href="umkm.html" class="text-primary font-semibold transition"
+            <a
+              href="umkm.html"
+              class="text-gray-600 hover:text-primary transition"
               >UMKM</a
             >
             <div class="relative dropdown">
               <button
-                class="dropdown-toggle text-gray-600 hover:text-primary transition focus:outline-none"
+                class="dropdown-toggle text-primary font-semibold transition focus:outline-none"
               >
                 Informasi <i class="fas fa-chevron-down fa-xs ml-1"></i>
               </button>
@@ -142,7 +153,7 @@
               >
                 <a
                   href="infografis.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  class="block px-4 py-2 text-sm text-primary font-semibold hover:bg-gray-100"
                   >Infografis Desa</a
                 >
                 <a
@@ -308,106 +319,101 @@
       <div class="absolute inset-0 bg-black/50"></div>
       <div
         class="absolute inset-0 bg-cover bg-center"
-        style="background-image: url('img/decoration/hero.jpg')"
+        style="
+          background-image: url('https://placehold.co/1920x600/3b82f6/ffffff?text=Data+Visual');
+        "
       ></div>
       <div class="relative z-10 px-4">
-        <h1 class="text-4xl md:text-5xl font-bold">UMKM Desa Manimbahoi</h1>
+        <h1 class="text-4xl md:text-5xl font-bold">Infografis Desa</h1>
         <p class="text-lg md:text-xl font-light mt-2">
-          Dukung Ekonomi Lokal dengan Produk Unggulan Desa
+          Data dan Informasi Desa dalam Tampilan Visual
         </p>
       </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card UMKM 1 -->
+        <!-- Card Infografis 1 -->
         <div
-          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
-          onclick="openUmkmModal(this)"
-          data-title="Kopi Robusta Manimbahoi"
-          data-img="img/decoration/hero.jpg"
-          data-info="Kopi Robusta Manimbahoi ditanam di ketinggian 900 MDPL, menghasilkan biji kopi dengan cita rasa kuat, pahit yang khas, dan aroma cokelat yang nikmat. Diproses secara tradisional oleh para petani lokal untuk menjaga kualitas terbaik dari setiap bijinya."
+          class="infografis-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[30rem]"
+          onclick="openInfografisModal(this)"
+          data-title="Data Demografi Penduduk 2025"
+          data-img="img/decoration/infografis.jpg"
         >
           <img
-            src="img/decoration/hero.jpg"
-            alt="Kopi Robusta"
-            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+            src="img/decoration/infografis.jpg"
+            alt="Infografis Demografi"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
           />
           <div class="overlay absolute inset-0 flex items-end">
             <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">Kopi Robusta Manimbahoi</h3>
+              <h3 class="text-2xl font-bold">Data Demografi Penduduk</h3>
             </div>
           </div>
         </div>
 
-        <!-- Card UMKM 2 -->
+        <!-- Card Infografis 2 -->
         <div
-          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
-          onclick="openUmkmModal(this)"
-          data-title="Madu Hutan Asli"
-          data-img="img/decoration/hero.jpg"
-          data-info="Diambil langsung dari hutan di sekitar Desa Manimbahoi, madu ini memiliki kualitas premium dengan rasa manis alami dan khasiat yang menyehatkan. Dipanen secara berkelanjutan untuk menjaga kelestarian lebah dan ekosistem hutan."
+          class="infografis-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[30rem]"
+          onclick="openInfografisModal(this)"
+          data-title="Potensi Pertanian Desa"
+          data-img="https://placehold.co/800x1200/22c55e/ffffff?text=Infografis+Pertanian"
         >
           <img
-            src="img/decoration/hero.jpg"
-            alt="Madu Hutan"
-            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+            src="https://placehold.co/400x600/22c55e/ffffff?text=Infografis+Pertanian"
+            alt="Infografis Pertanian"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
           />
           <div class="overlay absolute inset-0 flex items-end">
             <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">Madu Hutan Asli</h3>
+              <h3 class="text-2xl font-bold">Potensi Pertanian Desa</h3>
             </div>
           </div>
         </div>
 
-        <!-- Card UMKM 3 -->
+        <!-- Card Infografis 3 -->
         <div
-          class="umkm-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group"
-          onclick="openUmkmModal(this)"
-          data-title="Keripik Sayur Organik"
-          data-img="img/decoration/hero.jpg"
-          data-info="Camilan sehat yang terbuat dari sayuran organik segar hasil panen petani desa. Diolah tanpa bahan pengawet dan MSG, keripik ini renyah, gurih, dan kaya akan nutrisi. Tersedia dalam varian bayam, wortel, dan ubi."
+          class="infografis-card relative rounded-lg overflow-hidden shadow-lg cursor-pointer group h-[30rem]"
+          onclick="openInfografisModal(this)"
+          data-title="Alokasi Dana Desa (ADD) 2025"
+          data-img="https://placehold.co/800x1200/f59e0b/ffffff?text=Infografis+Anggaran"
         >
           <img
-            src="img/decoration/hero.jpg"
-            alt="Keripik Sayur"
-            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-300"
+            src="https://placehold.co/400x600/f59e0b/ffffff?text=Infografis+Anggaran"
+            alt="Infografis Anggaran"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
           />
           <div class="overlay absolute inset-0 flex items-end">
             <div class="info p-6 text-white w-full">
-              <h3 class="text-2xl font-bold">Keripik Sayur Organik</h3>
+              <h3 class="text-2xl font-bold">Alokasi Dana Desa (ADD)</h3>
             </div>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- Modal Popup UMKM -->
+    <!-- Modal Popup Infografis -->
     <div
-      id="umkm-modal"
-      class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+      id="infografis-modal"
+      class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
     >
       <div
-        id="modal-content"
-        class="bg-white rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row overflow-hidden"
+        id="modal-image-container"
+        class="relative max-w-3xl max-h-[90vh] overflow-auto"
       >
         <img
           id="modal-img"
           src=""
-          alt="Detail UMKM"
-          class="w-full md:w-1/2 h-64 md:h-auto object-cover"
+          alt="Detail Infografis"
+          class="w-auto h-auto max-w-full max-h-full rounded-lg"
         />
-        <div class="p-8 flex flex-col flex-grow overflow-y-auto">
-          <h2 id="modal-title" class="text-3xl font-bold text-dark mb-4"></h2>
-          <p id="modal-info" class="text-gray-600 text-justify flex-grow"></p>
-          <button
-            id="close-modal-button"
-            class="mt-6 self-start bg-primary text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
-          >
-            Tutup
-          </button>
-        </div>
       </div>
+      <button
+        id="close-modal-button"
+        class="absolute top-4 right-4 bg-white text-dark w-10 h-10 rounded-full text-xl hover:bg-gray-200 transition"
+      >
+        &times;
+      </button>
     </div>
 
     <footer class="bg-dark text-gray-300 pt-16 pb-8">
@@ -434,9 +440,13 @@
                 >
               </li>
               <li>
-                <a href="#wisata" class="hover:text-white transition">Wisata</a>
+                <a href="wisata.html" class="hover:text-white transition"
+                  >Wisata</a
+                >
               </li>
-              <li><a href="#" class="hover:text-white transition">UMKM</a></li>
+              <li>
+                <a href="umkm.html" class="hover:text-white transition">UMKM</a>
+              </li>
               <li>
                 <a href="#" class="hover:text-white transition">Layanan</a>
               </li>
@@ -453,20 +463,17 @@
                 <i class="fas fa-phone w-4 mr-2"></i><span>(021) 123-4567</span>
               </li>
               <li class="flex items-center">
-                <i class="fas fa-earth-asia w-4 mr-2"></i
-                ><a href="http://desamanimbahoi.web.id" class="underline"
-                  >desamanimbahoi.web.id</a
-                >
+                <i class="fas fa-envelope w-4 mr-2"></i
+                ><span>kontak@makmurjaya.desa.id</span>
               </li>
             </ul>
           </div>
           <div class="space-y-4">
             <h5 class="text-lg font-bold text-white">Lokasi Kantor Desa</h5>
-
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63562.65700903878!2d119.85646186759512!3d-5.314683669096334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbebc3bc1d86983%3A0xd5f0c725c22ebeb8!2sManimbahoi%2C%20Kec.%20Parigi%2C%20Kabupaten%20Gowa%2C%20Sulawesi%20Selatan!5e0!3m2!1sid!2sid!4v1754224818221!5m2!1sid!2sid"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.666421676674!2d106.82496417500001!3d-6.175392393809623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1722669466547!5m2!1sid!2sid"
               width="100%"
-              height="200"
+              height="150"
               style="border: 0"
               allowfullscreen=""
               loading="lazy"
@@ -487,19 +494,14 @@
     <!-- Main Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // --- SCRIPT UNTUK MODAL UMKM ---
-        const modal = document.getElementById("umkm-modal");
+        // --- SCRIPT UNTUK MODAL INFOGRAFIS ---
+        const modal = document.getElementById("infografis-modal");
         const closeModalButton = document.getElementById("close-modal-button");
+        const modalImage = document.getElementById("modal-img");
 
-        window.openUmkmModal = function (cardElement) {
-          const title = cardElement.dataset.title;
+        window.openInfografisModal = function (cardElement) {
           const img = cardElement.dataset.img;
-          const info = cardElement.dataset.info;
-
-          document.getElementById("modal-title").textContent = title;
-          document.getElementById("modal-img").src = img;
-          document.getElementById("modal-info").textContent = info;
-
+          modalImage.src = img;
           modal.classList.remove("hidden");
           document.body.classList.add("overflow-hidden");
         };
@@ -507,13 +509,22 @@
         function closeModal() {
           modal.classList.add("hidden");
           document.body.classList.remove("overflow-hidden");
+          // Reset zoom saat modal ditutup
+          modalImage.classList.remove("is-zoomed");
         }
 
         closeModalButton.addEventListener("click", closeModal);
         modal.addEventListener("click", function (event) {
+          // Hanya tutup jika klik di area backdrop (luar gambar)
           if (event.target === modal) {
             closeModal();
           }
+        });
+
+        // Fungsi Zoom pada gambar di modal
+        modalImage.addEventListener("click", function (event) {
+          event.stopPropagation(); // Mencegah modal tertutup saat gambar di-klik
+          this.classList.toggle("is-zoomed");
         });
 
         // --- SCRIPT LAINNYA ---
